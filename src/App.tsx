@@ -1,10 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import styles from './App.module.scss';
+import React, { useEffect } from "react";
+
+import logo from "assets/logo.svg";
+import { useAppDispatch } from "hooks/redux";
+import { appReady } from "store/app/slice";
+
+import styles from "./App.module.scss";
 
 function App() {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(appReady());
+  }, [dispatch]);
+
   return (
-    <div className={styles.App}>
+    <div className={styles.root}>
       <header className={styles.header}>
         <img src={logo} className={styles.logo} alt="logo" />
         <p>

@@ -1,0 +1,9 @@
+@import "~normalize.css";
+@import "./variables";
+
+body {
+  font-family: $main-font;
+  font-size: $main-font-size;
+  margin: 0;
+  padding: 0;
+}
