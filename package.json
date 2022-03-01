@@ -28,7 +28,8 @@
     "eject": "react-scripts eject",
     "lint:stylelint": "stylelint \"src/**/*.scss\" \"src/**/*.module.scss\"",
     "lint:eslint": "eslint \"src/**/*.{ts,tsx}\" --ext .js,.jsx,.ts,.tsx",
-    "lint": "concurrently \"npm run lint:eslint\" \"npm run lint:stylelint\""
+    "lint": "concurrently \"npm run lint:eslint\" \"npm run lint:stylelint\"",
+    "prepare": "husky install"
   },
   "browserslist": {
     "production": [
@@ -43,11 +44,14 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@typescript-eslint/eslint-plugin": "^5.12.1",
     "@typescript-eslint/parser": "^5.12.1",
     "concurrently": "^7.0.0",
     "eslint-config-prettier": "^8.4.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
     "postcss-scss": "^4.0.3",
     "prettier": "^2.5.1",
     "stylelint": "^14.5.1",
@@ -56,5 +60,10 @@
     "stylelint-config-standard": "^25.0.0",
     "stylelint-prettier": "^2.0.0",
     "stylelint-scss": "^4.1.0"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 }
